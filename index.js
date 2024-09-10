@@ -16,6 +16,13 @@ function generatePassword(length, includeLowercase, includeUppercase, includeNum
     allowedChars += includeNumbers ? numberChars : "";
     allowedChars += includeSymbols ? symbolChars : "";
 
+    if (length <= 0) {
+        return `(password length must be at least 1)`;
+    }
+    if (allowedChars.length === 0) {
+        return `(select at least 1 set of characters)`;
+    }
+
 }
 
 const passwordLength = 16;
